@@ -1,4 +1,4 @@
-package dev.baraa.mips.units;
+package mips.units;
 
 import java.util.HashMap;
 import java.util.Map;

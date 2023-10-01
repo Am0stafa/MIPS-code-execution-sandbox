@@ -1,11 +1,12 @@
-package dev.baraa.mips.graphics;
-
-import dev.baraa.mips.Simulator;
+package mips.graphics;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+
+import main.mips.Simulator;
+
 import java.awt.*;
 
 public class CodeBox extends JScrollPane {
@@ -21,8 +22,8 @@ public class CodeBox extends JScrollPane {
         this.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         this.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-        this.getVerticalScrollBar().setUI(new dev.baraa.mips.graphics.ScrollBar());
-        this.getHorizontalScrollBar().setUI(new dev.baraa.mips.graphics.ScrollBar());
+        this.getVerticalScrollBar().setUI(new mips.graphics.ScrollBar());
+        this.getHorizontalScrollBar().setUI(new mips.graphics.ScrollBar());
 
         code = new JTextArea();
         code.setFont(Fonts.getRegular().deriveFont(Fonts.fontSize(35)));

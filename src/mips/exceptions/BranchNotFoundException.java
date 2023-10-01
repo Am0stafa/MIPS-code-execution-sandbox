@@ -1,4 +1,4 @@
-package dev.baraa.mips.exceptions;
+package mips.exceptions;
 
 public class BranchNotFoundException extends CodeExceptions{
 

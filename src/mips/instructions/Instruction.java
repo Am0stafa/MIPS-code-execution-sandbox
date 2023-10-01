@@ -1,7 +1,7 @@
-package dev.baraa.mips.instructions;
+package mips.instructions;
 
-import dev.baraa.mips.exceptions.CodeExceptions;
-import dev.baraa.mips.units.Register;
+import mips.exceptions.CodeExceptions;
+import mips.units.Register;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package dev.baraa.mips.graphics;
+package mips.graphics;
 
 import java.awt.*;
 

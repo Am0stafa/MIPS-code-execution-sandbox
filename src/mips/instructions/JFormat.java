@@ -1,4 +1,4 @@
-package dev.baraa.mips.instructions;
+package mips.instructions;
 
 public class JFormat extends Instruction {
 

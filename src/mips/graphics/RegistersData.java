@@ -1,8 +1,9 @@
-package dev.baraa.mips.graphics;
-
-import dev.baraa.mips.Simulator;
+package mips.graphics;
 
 import javax.swing.*;
+
+import main.mips.Simulator;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

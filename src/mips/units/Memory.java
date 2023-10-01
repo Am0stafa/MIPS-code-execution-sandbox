@@ -1,6 +1,6 @@
-package dev.baraa.mips.units;
+package mips.units;
 
-import dev.baraa.mips.exceptions.MemoryOutOfBoundsException;
+import mips.exceptions.MemoryOutOfBoundsException;
 
 public class Memory {
 

@@ -1,7 +1,7 @@
-package dev.baraa.mips.instructions;
+package mips.instructions;
 
-import dev.baraa.mips.Simulator;
-import dev.baraa.mips.exceptions.MemoryOutOfBoundsException;
+import main.mips.Simulator;
+import mips.exceptions.MemoryOutOfBoundsException;
 
 public class IFormat extends Instruction {
 

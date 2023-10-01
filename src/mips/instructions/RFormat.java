@@ -1,8 +1,8 @@
-package dev.baraa.mips.instructions;
+package mips.instructions;
 
-import dev.baraa.mips.Simulator;
-import dev.baraa.mips.exceptions.UnknownInstructionException;
-import dev.baraa.mips.units.Register;
+import main.mips.Simulator;
+import mips.exceptions.UnknownInstructionException;
+import mips.units.Register;
 
 public class RFormat extends Instruction {
 

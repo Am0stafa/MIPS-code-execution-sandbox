@@ -1,4 +1,4 @@
-package dev.baraa.mips.units;
+package mips.units;
 
 public class Register {
 

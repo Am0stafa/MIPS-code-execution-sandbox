@@ -1,10 +1,12 @@
-package dev.baraa.mips.graphics;
+package mips.graphics;
 
-import dev.baraa.mips.Simulator;
-import dev.baraa.mips.exceptions.CodeExceptions;
+import mips.exceptions.CodeExceptions;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import main.mips.Simulator;
+
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

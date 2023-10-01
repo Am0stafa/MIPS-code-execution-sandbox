@@ -1,4 +1,4 @@
-package dev.baraa.mips.graphics;
+package mips.graphics;
 
 /*
         ==> This code was copied from stackoverflow.com
