@@ -1,7 +1,7 @@
 package mips.instructions;
 
-import main.mips.Simulator;
 import mips.exceptions.UnknownInstructionException;
+import mips.main.Simulator;
 import mips.units.Register;
 
 public class RFormat extends Instruction {

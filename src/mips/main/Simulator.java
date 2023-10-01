@@ -1,12 +1,10 @@
-package main.mips;
+package mips.main;
 
 import mips.exceptions.BranchNotFoundException;
 import mips.exceptions.CodeExceptions;
 import mips.exceptions.UnknownInstructionException;
-
 import mips.graphics.Fonts;
 import mips.graphics.Window;
-
 import mips.instructions.IFormat;
 import mips.instructions.Instruction;
 import mips.instructions.JFormat;
@@ -37,30 +35,6 @@ public class Simulator {
     private static File mainFolder;
     private static File savesFolder;
 
-    /**
-     * The Simulator class represents a simulator object that initializes the registersFile, memory, fonts, and window objects.
-     * 
-     * Example Usage:
-     * 
-     *     Simulator simulator = new Simulator();
-     * 
-     * Code Analysis:
-     * 
-     * Inputs:
-     *     None
-     * 
-     * Flow:
-     *     1. The constructor is called.
-     *     2. The simulator variable is assigned to the current instance of the Simulator class.
-     *     3. The registersFile object is created and initialized using the RegistersFile constructor.
-     *     4. The memory object is created and initialized using the Memory constructor.
-     *     5. The fonts object is created and initialized using the Fonts constructor.
-     *     6. The initialize method of the fonts object is called to load the fonts.
-     *     7. The window object is created and initialized using the Window constructor.
-     * 
-     * Outputs:
-     *     None
-     */
     public Simulator() throws IOException, FontFormatException {
         simulator = this;
         registersFile = new RegistersFile();
@@ -70,50 +44,19 @@ public class Simulator {
         window = new Window();
     }
 
-    //! starting point
     public static void main(String[] args) throws IOException, FontFormatException {
         String docs = FileSystemView.getFileSystemView().getDefaultDirectory().getPath();
 
         mainFolder = new File(docs + "\\MipsSimulator");
         if (!mainFolder.exists())
             mainFolder.mkdirs();
-
         savesFolder = new File(mainFolder.getPath() + "\\saves");
         if (!savesFolder.exists())
             savesFolder.mkdirs();
 
         new Simulator();
     }
-    
-    /**
-     * Executes a MIPS program without using pipeline processing.
-     * It takes the code from the window, parses it, and executes each instruction sequentially.
-     *
-     * Example Usage:
-     *     Simulator simulator = new Simulator();
-     *     simulator.runNoPipeline();
-     *
-     * Inputs: None
-     *
-     * Flow:
-     * 1. Reset all registers in the registersFile.
-     * 2. Print a message indicating that the program is running.
-     * 3. Get the code from the window, remove extra line breaks, and split it into an array of lines.
-     * 4. Iterate over each line of code.
-     * 5. If the line contains a comment or is empty, skip it.
-     * 6. Determine the type of instruction (R, I, or J) and create an instance of the corresponding instruction class.
-     * 7. Perform the instruction.
-     * 8. Increment the executed instruction count and print the instruction details.
-     * 9. If the instruction is a branch, find the target line number and update the loop counter accordingly.
-     * 10. If the instruction type is unknown, throw an exception.
-     * 11. Calculate the runtime of the program.
-     * 12. Print a message indicating that the program has ended, along with the total and executed instruction counts and the runtime.
-     * 13. Update the registers in the window.
-     *
-     * Outputs: None
-     *
-     * @throws CodeExceptions if there is an error in the code or an unknown instruction is encountered.
-     */
+
     public void runNoPipeline() throws CodeExceptions {
         registersFile.resetAll();
         System.out.println(" == Running Program == ");
@@ -180,12 +123,6 @@ public class Simulator {
 
     }
 
-    /**
-     * Displays a pop-up dialog box asking the user if they want to save the current file.
-     * 
-     * @param second The text to be displayed as the second option in the pop-up dialog box.
-     * @return true if the user chose to save the file, false otherwise.
-     */
     public boolean unsavedPopUp(String second) {
         Object[] options = {"Save", second};
         int selection = JOptionPane.showOptionDialog(window, "Would you like to save current file?", "Unsaved Changes",
@@ -195,13 +132,6 @@ public class Simulator {
         return selection == 0;
     }
 
-    /**
-     * Saves the contents of the code window to a file.
-     * If the file name is not specified, it creates a new file with a unique name in the saves folder.
-     * If the file name is already set, it overwrites the existing file.
-     *
-     * @throws IOException if an I/O error occurs while creating or writing to the file
-     */
     public void saveFile() throws IOException {
         File file;
 
@@ -222,24 +152,6 @@ public class Simulator {
         setSaved(true);
     }
 
-    /**
-     * Resets the file name, clears the code box, updates the window title, and marks the file as unsaved.
-     * 
-     * Example Usage:
-     * 
-     * Simulator simulator = new Simulator();
-     * simulator.newFile();
-     * 
-     * Inputs: None
-     * 
-     * Flow:
-     * 1. Sets the fileName variable to null.
-     * 2. Calls the reset method of the codeBox object in the window to clear the code box.
-     * 3. Calls the updateTitle method of the window to update the window title.
-     * 4. Calls the forceUnsaved method to mark the file as unsaved.
-     * 
-     * Outputs: None
-     */
     public void newFile() {
         fileName = null;
         window.getCodeBox().reset();
@@ -247,12 +159,6 @@ public class Simulator {
         forceUnsaved();
     }
 
-    /**
-     * Opens a file and displays its contents in the code box of the simulator's window.
-     *
-     * @param file The file to be opened.
-     * @throws IOException If an I/O error occurs.
-    */
     public void openFile(File file) throws IOException {
         window.getCodeBox().reset();
         fileName = file.getName();

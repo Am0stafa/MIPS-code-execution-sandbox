@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import main.mips.Simulator;
+import mips.main.Simulator;
 
 import java.awt.*;
 

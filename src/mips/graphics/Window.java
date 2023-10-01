@@ -2,7 +2,7 @@ package mips.graphics;
 
 import javax.swing.*;
 
-import main.mips.Simulator;
+import mips.main.Simulator;
 
 import java.awt.*;
 

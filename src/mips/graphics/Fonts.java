@@ -9,8 +9,8 @@ public class Fonts {
     private static Font bold;
 
     public void initialize() throws IOException, FontFormatException {
-        regular = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("dev/baraa/mips/graphics/fonts/AnonymousPro-Regular.ttf"));
-        bold = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("dev/baraa/mips/graphics/fonts/AnonymousPro-Bold.ttf"));
+        regular = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("mips/graphics/fonts/AnonymousPro-Regular.ttf"));
+        bold = Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("mips/graphics/fonts/AnonymousPro-Bold.ttf"));
     }
 
     public static Font getRegular() {

@@ -1,12 +1,10 @@
 package mips.graphics;
 
 import mips.exceptions.CodeExceptions;
+import mips.main.Simulator;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-import main.mips.Simulator;
-
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

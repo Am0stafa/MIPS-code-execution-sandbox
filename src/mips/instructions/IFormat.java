@@ -1,7 +1,7 @@
 package mips.instructions;
 
-import main.mips.Simulator;
 import mips.exceptions.MemoryOutOfBoundsException;
+import mips.main.Simulator;
 
 public class IFormat extends Instruction {
 
