@@ -40,10 +40,13 @@ public class RegistersFile {
         registers.put("$ra", new Register());
     }
 
+    // public Register getRegisterByName(String name) {
+    //     name = name.equals("$0") ? "$zero" : name;
+    //     return registers.get(name);
+    // }
     public Register getRegisterByName(String name) {
-        name = name.equals("$0") ? "$zero" : name;
-        return registers.get(name);
-    }
+      return registers.getOrDefault(name, null);
+  }
 
     public String registerData(char type) {
         StringBuilder temp = new StringBuilder();

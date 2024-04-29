@@ -116,9 +116,7 @@ public class IFormat extends Instruction {
     private String modifyInstruction(String[] instruction, int i, String s) {
         if (s.contains(")"))
             return s;
-
-        s += instruction[i];
-        return modifyInstruction(instruction, i + 1, s);
+        return modifyInstruction(instruction, i + 1, s + " " + instruction[i]);
     }
 
     public int getImmediate() {

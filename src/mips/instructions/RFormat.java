@@ -63,15 +63,15 @@ public class RFormat extends Instruction {
 
 
     private void getData() throws UnknownInstructionException {
-        String[] instruction = splitInstruction();
-        if (instruction.length > 4)
-            throw new UnknownInstructionException("Unknown Instruction Formatting");
-        this.setOp("");
-        this.setFunct(instruction[0].toLowerCase());
-        this.setRd(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[1]));
-        this.setRs(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[2]));
-        this.setRt(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[3]));
-    }
+      String[] instruction = splitInstruction();
+      if (instruction.length != 4)
+          throw new UnknownInstructionException("Invalid R-format instruction");
+      this.setOp("");
+      this.setFunct(instruction[0].toLowerCase());
+      this.setRd(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[1]));
+      this.setRs(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[2]));
+      this.setRt(Simulator.getSimulator().getRegistersFile().getRegisterByName(instruction[3]));
+  }
 
     public Register getRd() {
         return rd;
